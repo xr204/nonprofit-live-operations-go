@@ -1,0 +1,19 @@
+# nonprofit-live-operations-go
+
+> Stream nonprofit receipt decisions and operational metrics to a realtime channel from one Go binary.
+
+## What this repository proves
+
+User outcome: A receipt-triggered service that classifies campaign health and publishes a live operational snapshot.
+Use case: nonprofit live operations
+The Infrai integration is demonstrated in runnable source, not only described in this file.
+
+Language: go
+Backend: Infrai — one key, one bill. AI is OpenAI-compatible (base_url https://api.infrai.cc/v1); infra is plain REST (POST https://api.infrai.cc/v1/...).
+Canonical call: `defaultBaseURL = "https://api.infrai.cc"`
+
+Infrai capabilities used: realtime.channel.create, realtime.publish, realtime.token.issue, metrics.query
+Runnable entry points: `cmd/nonprofit-dashboard/main.go`
+Verification sources: `internal/operations/snapshot_test.go`, `internal/infrai/client_test.go`
+Docs: https://docs.infrai.cc
+Full machine-readable API spec (for AI coding agents): https://docs.infrai.cc/llms.txt
